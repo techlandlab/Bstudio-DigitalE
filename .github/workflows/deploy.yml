@@ -1,0 +1,49 @@
+# GitHub Actions Workflow: Build and Deploy to VPS
+
+name: Build and Deploy
+
+# Trigger this workflow on every push to the 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js environment
+      # We specify a version of Node.js to ensure consistency
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Install project dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. Build the React application
+      # This creates the production-ready static files in the 'build' directory
+      - name: Build Project
+        run: npm run build
+
+      # 5. Deploy files to the server
+      # Uses the 'scp' (Secure Copy) protocol to transfer the built files
+      - name: Deploy to Server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          source: "build/*"
+          target: "/var/www/www-root/data/www/app.bean.st"
+          strip_components: 1 # This removes the 'build' directory level, copying its contents directly.
