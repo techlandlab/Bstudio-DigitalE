@@ -1,21 +1,6 @@
 import React from 'react';
 
-export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  icon: React.ComponentType<{ className?: string }>;
-}
-
-export interface Project {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  tags: string[];
-}
-
-// Fix: Add and export MenuItem interface to resolve missing type error in components/MenuItem.tsx.
+// MenuItem interface for individual menu items.
 export interface MenuItem {
   id: number;
   name: string;
@@ -24,9 +9,28 @@ export interface MenuItem {
   imageUrl: string;
 }
 
-// Fix: Add and export MenuCategory interface to resolve missing type error in components/Menu.tsx.
+// MenuCategory interface for grouping menu items.
 export interface MenuCategory {
   id: string;
   name: string;
   items: MenuItem[];
+}
+
+// FIX: Define and export Service type to resolve import errors in ServiceCard.tsx and Services.tsx.
+// Service interface for what-we-do items.
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ElementType;
+}
+
+// FIX: Define and export Project type to resolve import errors in ProjectCard.tsx and Portfolio.tsx.
+// Project interface for portfolio items.
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  tags: string[];
 }

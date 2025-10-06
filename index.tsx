@@ -14,3 +14,5 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// A small change to enable a new commit.

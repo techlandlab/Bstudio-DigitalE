@@ -15,14 +15,14 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About Us' },
-    { href: '#services', label: 'Services' },
-    { href: '#portfolio', label: 'Portfolio' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#about', label: 'O nas' },
+    { href: '#menu', label: 'Menu' },
+    { href: '#gallery', label: 'Galeria' },
+    { href: '#contact', label: 'Kontakt' },
   ];
   
   const linkClasses = isScrolled 
-    ? 'text-gray-700 hover:text-green-600' 
+    ? 'text-gray-700 hover:text-[#4a2c2a]' 
     : 'text-white hover:text-gray-200';
 
   return (
@@ -33,8 +33,8 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="#home" className="flex items-center text-2xl font-bold">
-          <MoonIcon className={`h-7 w-7 mr-2 transition-colors duration-300 ${isScrolled ? 'text-green-600' : 'text-green-500'}`} />
-          <span className={`transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`}>Bean Studio</span>
+          <MoonIcon className={`h-7 w-7 mr-2 transition-colors duration-300 ${isScrolled ? 'text-[#4a2c2a]' : 'text-[#d4a373]'}`} />
+          <span className={`transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`}>Bean Studio Cafe</span>
         </a>
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-green-600 transition-colors duration-300 font-medium text-lg"
+                className="text-gray-700 hover:text-[#4a2c2a] transition-colors duration-300 font-medium text-lg"
               >
                 {link.label}
               </a>

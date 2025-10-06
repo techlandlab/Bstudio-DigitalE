@@ -9,19 +9,19 @@ const About: React.FC = () => {
           <div className="md:w-1/2">
             <Card className="p-0">
               <img 
-                src="https://picsum.photos/seed/designoffice/600/700" 
-                alt="Bean Studio team collaborating" 
+                src="https://picsum.photos/seed/cafeinterior/600/700" 
+                alt="Wnętrze kawiarni Bean Studio" 
                 className="w-full h-full object-cover rounded-lg" 
               />
             </Card>
           </div>
           <div className="md:w-1/2 text-center md:text-left">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">About Bean Studio</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#4a2c2a] mb-6">O Naszej Kawiarni</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-4">
-              Bean Studio is a creative digital agency where fresh ideas are brewed daily. We are a collective of designers, developers, and strategists passionate about crafting exceptional digital experiences that captivate and convert.
+              Bean Studio Cafe to miejsce, gdzie miłość do kawy spotyka się z artystyczną duszą. Jesteśmy grupą pasjonatów, baristów i cukierników, którzy każdego dnia wkładają serce w to, co robią, aby dostarczyć Wam niezapomnianych wrażeń smakowych.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Like a perfect cup of coffee, we believe the best digital products are a blend of art and science. We combine creative design with robust technology to build websites, apps, and brands that not only look great but also perform flawlessly.
+              Wierzymy, że idealna filiżanka kawy to coś więcej niż tylko napój – to rytuał, chwila dla siebie, okazja do spotkania. Dlatego dbamy o każdy szczegół: od starannie wyselekcjonowanych ziaren z najlepszych palarni, po unikalny wystrój naszego wnętrza, który tworzy przytulną i inspirującą atmosferę.
             </p>
           </div>
         </div>
